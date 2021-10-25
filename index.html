@@ -28,7 +28,11 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <div id="app"></div>
+          <ul id="app"></ul>
+          <div id="buttons" class="d-flex align-items-center">
+            <!-- <button class="btn btn-success" onclick="app.peopleController.pageChange('previous')">Previous</button>
+            <button class="btn btn-success" onclick="app.peopleController.pageChange('next')">Next</button> -->
+          </div>
         </div>
       </div>
     </div>
@@ -42,7 +46,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>
-  <script src="app/main.js" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"></script>
+  <script src=" app/main.js" type="module"></script>
 </body>
 
 </html>
