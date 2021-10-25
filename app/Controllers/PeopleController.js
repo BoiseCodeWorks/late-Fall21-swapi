@@ -16,10 +16,15 @@ function _drawButtons(){
   let nextPage = ProxyState.nextPage
   let prevPage = ProxyState.prevPage
   document.getElementById('buttons').innerHTML = `
-  <button class="btn btn-success" ${prevPage ? '': 'disabled'} onclick="app.peopleController.pageChange('previous')">Previous</button>
+  <button class="btn btn-success" ${prevPage ? '': 'disabled'} onclick="app.peopleController.getPeople('${prevPage}')">Previous</button>
   <div class="px-3">${pageNumber}</div>
-  <button class="btn btn-success" ${nextPage ? '': 'disabled'} onclick="app.peopleController.pageChange('next')">Next</button>
+  <button class="btn btn-success" ${nextPage ? '': 'disabled'} onclick="app.peopleController.getPeople('${nextPage}')">Next</button>
   `
+  // document.getElementById('buttons').innerHTML = `
+  // <button class="btn btn-success" ${prevPage ? '': 'disabled'} onclick="app.peopleController.pageChange('previous')">Previous</button>
+  // <div class="px-3">${pageNumber}</div>
+  // <button class="btn btn-success" ${nextPage ? '': 'disabled'} onclick="app.peopleController.pageChange('next')">Next</button>
+  // `
 }
 
 
@@ -34,20 +39,22 @@ export class PeopleController{
   }
 
 
-  async getPeople(){
+  async getPeople(url){
     try {
-      await peopleService.getPeople()
+      await peopleService.getPeople(url)
       console.log('controller: get people finished');
     } catch (error) {
       console.error('beep beep whahaw',error)
     }
   }
 
-  async pageChange(pageDirection){
-    try {
-      await peopleService.pageChange(pageDirection)
-    } catch (error) {
-      console.error('beep beep whahaw',error)
-    }
-  }
+  // NOTE not being used any more
+
+  // async pageChange(pageDirection){
+  //   try {
+  //     await peopleService.pageChange(pageDirection)
+  //   } catch (error) {
+  //     console.error('beep beep whahaw',error)
+  //   }
+  // }
 }

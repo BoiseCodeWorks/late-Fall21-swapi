@@ -6,7 +6,7 @@ class AppState extends EventEmitter {
   values = []
   /** @type {import('./Models/Person').Person[]} */
   people = []
-  pageNumber = 1
+  pageNumber = '1'
   nextPage = null
   prevPage = null
 }
